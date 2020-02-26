@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [TestAll]">
+  <test thread-count="5" verbose="0" name="Logger_Reporting(failed)">
+    <classes>
+      <class name="com.mkyong.LoginTest">
+        <methods>
+          <include name="testLogger"/>
+        </methods>
+      </class> <!-- com.mkyong.LoginTest -->
+    </classes>
+  </test> <!-- Logger_Reporting(failed) -->
+</suite> <!-- Failed suite [TestAll] -->

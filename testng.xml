@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+
+    <test name="Logger_Reporting">
+        <classes>
+            <class name="com.mkyong.LoginTest" />
+        </classes>
+    </test>
+
+</suite>
