@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="TestAll" duration-ms="582" started-at="2020-02-23T20:48:35Z" finished-at="2020-02-23T20:48:35Z">
+  <suite name="TestAll" duration-ms="763" started-at="2020-02-26T14:47:01Z" finished-at="2020-02-26T14:47:02Z">
     <groups>
     </groups>
-    <test name="Logger_Reporting" duration-ms="582" started-at="2020-02-23T20:48:35Z" finished-at="2020-02-23T20:48:35Z">
+    <test name="Logger_Reporting" duration-ms="763" started-at="2020-02-26T14:47:01Z" finished-at="2020-02-26T14:47:02Z">
       <class name="com.mkyong.LoginTest">
-        <test-method status="FAIL" signature="testLogger()[pri:0, instance:com.mkyong.LoginTest@27a5328c]" name="testLogger" duration-ms="212" started-at="2020-02-23T20:48:35Z" description="Invalid Login Scenario with wrong username and password." finished-at="2020-02-23T20:48:35Z">
+        <test-method status="FAIL" signature="testLogger()[pri:0, instance:com.mkyong.LoginTest@702ed190]" name="testLogger" duration-ms="298" started-at="2020-02-26T14:47:01Z" description="Invalid Login Scenario with wrong username and password." finished-at="2020-02-26T14:47:01Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -45,9 +45,10 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
 at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
 at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:386)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:323)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:143)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
