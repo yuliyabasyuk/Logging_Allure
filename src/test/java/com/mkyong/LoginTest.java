@@ -2,10 +2,14 @@ package com.mkyong;
 
 import com.mkyong.utils.TestListener;
 import io.qameta.allure.*;
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.IOException;
 
 @Listeners(TestListener.class)
 @Epic("Regression Tests")
@@ -26,7 +30,12 @@ public class LoginTest {
     @Test
     public void oneMoreTest() {
         logger.info("Other test");
-        byte[] biteArray = new byte[]{1, 2, 3};
+        byte[] biteArray;
+        try {
+            biteArray = FileUtils.readFileToByteArray(new File(System.getProperty("user.dir") + "/Log4j/oneMoreTest.log"));
+        } catch (IOException ex){
+            biteArray = null;
+        }
         Allure.getLifecycle().addAttachment("Other Test logs", "text/plain", "log", biteArray);
     }
 
