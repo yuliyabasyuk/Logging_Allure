@@ -1,5 +1,6 @@
 package com.mkyong;
 
+import com.mkyong.utils.ConfigureAppender;
 import com.mkyong.utils.TestListener;
 import io.qameta.allure.*;
 import org.apache.commons.io.FileUtils;
@@ -15,7 +16,7 @@ import java.io.IOException;
 @Epic("Regression Tests")
 @Feature("Login Test")
 public class LoginTest {
-    final static Logger logger = Logger.getLogger(LoginTest.class);
+    final static Logger LOG = Logger.getLogger(LoginTest.class);
 
     @Test (priority = 0, description="Invalid Login Scenario with wrong username and password.")
     @Severity(SeverityLevel.BLOCKER)
@@ -29,9 +30,14 @@ public class LoginTest {
 
     @Test
     public void oneMoreTest() {
-        logger.info("Other test");
+        //TODO: use Listener, do not hardcode
+        ConfigureAppender.configureFileAppender("oneMoreTest");
+        LOG.info("Other test");
+        LOG.debug("Checking the configuration of the file appender");
+
         byte[] biteArray;
         try {
+//            biteArray = FileUtils.readFileToByteArray(new File(System.getProperty("user.dir") + "/Log4j/oneMoreTest1.log"));
             biteArray = FileUtils.readFileToByteArray(new File(System.getProperty("user.dir") + "/Log4j/oneMoreTest.log"));
         } catch (IOException ex){
             biteArray = null;
@@ -41,22 +47,22 @@ public class LoginTest {
 
     private void runMe(String parameter){
 
-        if(logger.isDebugEnabled()){
-            logger.debug("This is debug : " + parameter);
+        if(LOG.isDebugEnabled()){
+            LOG.debug("This is debug : " + parameter);
         }
 
-        if(logger.isInfoEnabled()){
-            logger.info("This is info : " + parameter);
+        if(LOG.isInfoEnabled()){
+            LOG.info("This is info : " + parameter);
         }
 
-        logger.warn("This is warn : " + parameter);
-        logger.error("This is error : " + parameter);
-        logger.fatal("This is fatal : " + parameter);
+        LOG.warn("This is warn : " + parameter);
+        LOG.error("This is error : " + parameter);
+        LOG.fatal("This is fatal : " + parameter);
     }
 
     @Step("Login with username {0}, password {1}")
     public void login(String username, String password){
-        logger.info("Log in as " + username);
+        LOG.info("Log in as " + username);
         Assert.assertTrue(password.equals("1234"));
     }
 }
