@@ -20,6 +20,8 @@ public class ConfigureAppender {
         {
             RollingFileAppender fileAppender =
                     new RollingFileAppender(layout, System.getProperty("user.dir") + "/Log4j/"+ logFilename +".log");
+            fileAppender.setMaxFileSize("5MB");
+            fileAppender.setMaxBackupIndex(10);
             rootLogger.addAppender(fileAppender);
         }
         catch (IOException e)
