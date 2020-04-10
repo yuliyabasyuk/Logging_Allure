@@ -23,6 +23,11 @@ public class LoginTest {
         login("testUser", "testPassword");
     }
 
+    @Test
+    public void oneMoreTest() {
+        logger.info("Other test");
+    }
+
     private void runMe(String parameter){
 
         if(logger.isDebugEnabled()){

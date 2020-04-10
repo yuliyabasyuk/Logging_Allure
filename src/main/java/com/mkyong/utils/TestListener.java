@@ -15,7 +15,7 @@ public class TestListener implements ITestListener {
 
     public void onFinish(ITestContext arg0) {
         // TODO Auto-generated method stub
-
+        attachLogsToAllure("onFinish");
     }
 
     public void onStart(ITestContext arg0) {
@@ -39,6 +39,8 @@ public class TestListener implements ITestListener {
             biteArray = null;
         }
         allureLifecycle.addAttachment("Test logs", "text/plain", "log", biteArray);
+
+        attachLogsToAllure("onTestFailure");
     }
 
     public void onTestSkipped(ITestResult arg0) {
@@ -59,6 +61,18 @@ public class TestListener implements ITestListener {
     @Attachment(value = "0", type = "text/plain")
     private static String saveTextLog(String message){
         return message;
+    }
+
+    @Attachment()
+    private static void attachLogsToAllure(String message){
+        AllureLifecycle allureLifecycle = Allure.getLifecycle();
+        byte[] biteArray;
+        try {
+            biteArray = FileUtils.readFileToByteArray(new File(System.getProperty("user.dir") + "/Log4j/log4j-application.log"));
+        } catch (IOException ex){
+            biteArray = null;
+        }
+        allureLifecycle.addAttachment("Logs attachment " + message, "text/plain", "log", biteArray);
     }
 
     private static String getTestMethodName(ITestResult iTestResult){
