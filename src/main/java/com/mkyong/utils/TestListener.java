@@ -1,9 +1,15 @@
 package com.mkyong.utils;
 
+import io.qameta.allure.Allure;
+import io.qameta.allure.AllureLifecycle;
 import io.qameta.allure.Attachment;
+import org.apache.commons.io.FileUtils;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import java.io.File;
+import java.io.IOException;
 
 public class TestListener implements ITestListener {
 
@@ -25,6 +31,14 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult iTestResult) {
         saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
 
+        AllureLifecycle allureLifecycle = Allure.getLifecycle();
+        byte[] biteArray;
+        try {
+            biteArray = FileUtils.readFileToByteArray(new File("${user.dir}/Log4j/log4j-application.log"));
+        } catch (IOException ex){
+            biteArray = null;
+        }
+        allureLifecycle.addAttachment("Test logs", "text/plain", "log", biteArray);
     }
 
     public void onTestSkipped(ITestResult arg0) {
