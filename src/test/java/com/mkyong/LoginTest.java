@@ -26,6 +26,8 @@ public class LoginTest {
     @Test
     public void oneMoreTest() {
         logger.info("Other test");
+        byte[] biteArray = new byte[]{1, 2, 3};
+        Allure.getLifecycle().addAttachment("Other Test logs", "text/plain", "log", biteArray);
     }
 
     private void runMe(String parameter){
