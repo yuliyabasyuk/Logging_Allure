@@ -22,3 +22,33 @@
 2020-04-10 12:27:36 ERROR LoginTest:37 - This is error : mkyong
 2020-04-10 12:27:36 FATAL LoginTest:38 - This is fatal : mkyong
 2020-04-10 12:27:36 INFO  LoginTest:43 - Log in as testUser
+2020-04-10 13:00:38 DEBUG LoginTest:43 - This is debug : mkyong
+2020-04-10 13:00:38 INFO  LoginTest:47 - This is info : mkyong
+2020-04-10 13:00:38 WARN  LoginTest:50 - This is warn : mkyong
+2020-04-10 13:00:38 ERROR LoginTest:51 - This is error : mkyong
+2020-04-10 13:00:38 FATAL LoginTest:52 - This is fatal : mkyong
+2020-04-10 13:00:38 INFO  LoginTest:57 - Log in as testUser
+2020-04-10 13:01:06 DEBUG LoginTest:43 - This is debug : mkyong
+2020-04-10 13:01:06 INFO  LoginTest:47 - This is info : mkyong
+2020-04-10 13:01:06 WARN  LoginTest:50 - This is warn : mkyong
+2020-04-10 13:01:06 ERROR LoginTest:51 - This is error : mkyong
+2020-04-10 13:01:06 FATAL LoginTest:52 - This is fatal : mkyong
+2020-04-10 13:01:06 INFO  LoginTest:57 - Log in as testUser
+2020-04-10 13:01:46 DEBUG LoginTest:43 - This is debug : mkyong
+2020-04-10 13:01:46 INFO  LoginTest:47 - This is info : mkyong
+2020-04-10 13:01:46 WARN  LoginTest:50 - This is warn : mkyong
+2020-04-10 13:01:46 ERROR LoginTest:51 - This is error : mkyong
+2020-04-10 13:01:46 FATAL LoginTest:52 - This is fatal : mkyong
+2020-04-10 13:01:46 INFO  LoginTest:57 - Log in as testUser
+2020-04-10 13:02:05 DEBUG LoginTest:43 - This is debug : mkyong
+2020-04-10 13:02:05 INFO  LoginTest:47 - This is info : mkyong
+2020-04-10 13:02:05 WARN  LoginTest:50 - This is warn : mkyong
+2020-04-10 13:02:05 ERROR LoginTest:51 - This is error : mkyong
+2020-04-10 13:02:05 FATAL LoginTest:52 - This is fatal : mkyong
+2020-04-10 13:02:05 INFO  LoginTest:57 - Log in as testUser
+2020-04-10 13:03:23 DEBUG LoginTest:43 - This is debug : mkyong
+2020-04-10 13:03:23 INFO  LoginTest:47 - This is info : mkyong
+2020-04-10 13:03:23 WARN  LoginTest:50 - This is warn : mkyong
+2020-04-10 13:03:23 ERROR LoginTest:51 - This is error : mkyong
+2020-04-10 13:03:23 FATAL LoginTest:52 - This is fatal : mkyong
+2020-04-10 13:03:23 INFO  LoginTest:57 - Log in as testUser

@@ -34,7 +34,7 @@ public class TestListener implements ITestListener {
         AllureLifecycle allureLifecycle = Allure.getLifecycle();
         byte[] biteArray;
         try {
-            biteArray = FileUtils.readFileToByteArray(new File("${user.dir}/Log4j/log4j-application.log"));
+            biteArray = FileUtils.readFileToByteArray(new File(System.getProperty("user.dir") + "/Log4j/log4j-application.log"));
         } catch (IOException ex){
             biteArray = null;
         }
