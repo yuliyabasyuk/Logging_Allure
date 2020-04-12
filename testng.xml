@@ -4,11 +4,8 @@
 
     <test name="Logger_Reporting">
         <classes>
-            <class name="com.mkyong.LoginTest" >
-            <methods>
-            <include name="oneMoreTest"/>
-            </methods>
-            </class>
+            <class name="com.mkyong.Service1" />
+            <class name="com.mkyong.Service2" />
         </classes>
     </test>
 
