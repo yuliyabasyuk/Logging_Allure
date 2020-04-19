@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 
 public class ConfigureAppender {
     private static final Logger LOG = Logger.getLogger(ConfigureAppender.class);
+    private static String fileAppenderName = "file";
 
     public static Logger configureLogger(String testMethod) {
         Logger rootLogger = Logger.getRootLogger();
@@ -23,15 +24,33 @@ public class ConfigureAppender {
         Logger logger = Logger.getLogger(testMethod);
         String filePath = getLogfilePath(testMethod);
         try {
-            //todo: check System.getProperty("user.dir") in qa module
             Files.deleteIfExists(Paths.get(filePath));
             RollingFileAppender fileAppender = new RollingFileAppender(layout, filePath);
+            fileAppender.setName(fileAppenderName);
             logger.addAppender(fileAppender);
         } catch (IOException e) {
             logger.error("Failed to add file appender " + filePath);
         }
 
         return logger;
+    }
+
+    public static void configureLogger1(String testMethod) {
+        Logger rootLogger = Logger.getRootLogger();
+        rootLogger.setLevel(Level.DEBUG);
+        PatternLayout layout = new PatternLayout("%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n");
+
+        String filePath = getLogfilePath(testMethod);
+        try {
+            //todo: check System.getProperty("user.dir") in qa module
+            Files.deleteIfExists(Paths.get(filePath));
+            rootLogger.removeAppender(fileAppenderName);
+            RollingFileAppender fileAppender = new RollingFileAppender(layout, filePath);
+            fileAppender.setName(fileAppenderName);
+            rootLogger.addAppender(fileAppender);
+        } catch (IOException e) {
+            rootLogger.error("Failed to add file appender " + filePath);
+        }
     }
 
     public static void configureFileAppender(String filePath) {
@@ -44,21 +63,12 @@ public class ConfigureAppender {
             //todo: check System.getProperty("user.dir") in qa module
             Files.deleteIfExists(Paths.get(filePath));
             RollingFileAppender fileAppender = new RollingFileAppender(layout, filePath);
+            fileAppender.setName(fileAppenderName);
             rootLogger.addAppender(fileAppender);
         } catch (IOException e) {
             LOG.error("Failed to add file appender " + filePath);
         }
     }
-
-//    public static void addAllureFileAttachment(String filePath, String testMethod) {
-//        byte[] content = new byte[0];
-//        try {
-//            content = FileUtils.readFileToByteArray(new File(filePath));
-//        } catch (IOException ex){
-//            LOG.error("Failed to read file " + filePath);
-//        }
-//        Allure.getLifecycle().addAttachment(testMethod, "text/plain", "log", content);
-//    }
 
     public static void addAllureFileAttachment(String testMethod) {
         String filePath = getLogfilePath(testMethod);

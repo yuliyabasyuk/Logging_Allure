@@ -4,8 +4,8 @@
 
     <test name="Logger_Reporting">
         <classes>
-            <class name="com.mkyong.Service1" />
-            <class name="com.mkyong.Service2" />
+            <class name="com.mkyong.qa.Service3" />
+            <class name="com.mkyong.qa.Service4" />
         </classes>
     </test>
 

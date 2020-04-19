@@ -1,4 +1,4 @@
-package com.mkyong;
+package com.mkyong.qa;
 
 import com.mkyong.utils.ConfigureAppender;
 import org.apache.log4j.Logger;
@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 
 public class BaseTest {
     String testMethod;
-    Logger logger;
+    static Logger logger;
 
     @BeforeMethod
     public void setUp(Method method) {

@@ -1,4 +1,4 @@
-package com.mkyong;
+package com.mkyong.qa;
 
 import com.mkyong.utils.ConfigureAppender;
 import com.mkyong.utils.TestListener;
